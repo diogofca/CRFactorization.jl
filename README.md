@@ -24,3 +24,6 @@ Finally, a concrete example:
 
 $$ \begin{bmatrix} 1 & 2 & 3 \\ 5 & 11 & 23 \end{bmatrix} = 
 \begin{bmatrix} 1 & 2 \\ 5 & 11 \end{bmatrix} \begin{bmatrix} 1 & 0 & -13 \\ 0 & 1 8 \end{bmatrix} $$
+
+## Important note:
+Only works for Matrices with n >= 2. You cannot put in column vectors.
