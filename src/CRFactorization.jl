@@ -1,16 +1,11 @@
 module CRFactorization
-
+using LinearAlgebra
 export cr
 
 function IsLinearlyIndependant(E)
-    try
-        m = size(E)[1]
-        E \ zeros(m, 1)
-        
-    catch
-        return false
-    end
-    return true
+    # the goal is to define a function that checks of the columns of a matrix E are linearly independent
+    rank(E) == size(E)[2] ? (return true) : (return false)
+
 end
 
 #function to get the C component of the factorization A = CR
@@ -23,7 +18,8 @@ function crC(A)
         if IsLinearlyIndependant([setC[j][i] for i in 1:m, j in 1:length(setC)])
             continue
         else
-            deleteat!(setC, length(setC))
+            # deleteat!(setC, length(setC))
+            pop!(setC)
         end
     end
     # finally converting back to matrix form   !TODO make a function to convert from set back back to matrix to clear up the code
@@ -31,8 +27,8 @@ function crC(A)
 end
 
 struct CRpack
-    C::Matrix
-    R::Matrix
+    C
+    R
 end
 
 
