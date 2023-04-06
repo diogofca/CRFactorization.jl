@@ -1,9 +1,17 @@
 # CRFactorization
-Code for Columns and Rows factorization of a matrix
+Code for Columns and Rows factorization of a square matrix
  
  ## Quick setup guide
+Install the package with 
+```julia
+Pkg.add("https://github.com/diogofca/CRFactorization.jl")
+```
 
  ## Usage
+```julia
+using CRFactorization
+cr(rand(1:9, 2,2))
+```
 
  ## Mathematical Foundations ($A = CR$)
 This is perhaps the simplest matrix factorization of them all, that consists of slicing a matrix $A$ into its independent columns and rows. The easiest way to think about it is considering a matrix $C$, that consists of the independent columns of $A$, then, the coefficients of each column of $R$ will be those that make the linear combinations of the columns of $C$ equal the columns of $A$.
