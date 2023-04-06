@@ -1,5 +1,5 @@
 # CRFactorization
-Code for Columns and Rows factorization of a square matrix
+Code for Columns and Rows factorization of a matrix.
  
  ## Quick setup guide
 Install the package with 
